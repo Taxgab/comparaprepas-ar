@@ -1,0 +1,81 @@
+"use client";
+
+import { Shield, Menu, X } from "lucide-react";
+import { useState } from "react";
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Inicio", href: "#inicio" },
+    { name: "Planes", href: "#planes" },
+    { name: "Cómo Funciona", href: "#como-funciona" },
+    { name: "Legal", href: "#legal" },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 bg-white shadow-md">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <Shield className="h-8 w-8 text-primary-600" />
+            <span className="text-xl font-bold text-gray-900">
+              ComparaPrepas AR
+            </span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-gray-600 hover:text-primary-600 transition-colors font-medium"
+              >
+                {link.name}
+              </a>
+            ))}
+            <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+              Contactar
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-gray-600" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-600" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-600 hover:text-primary-600 transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium w-full">
+                Contactar
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
