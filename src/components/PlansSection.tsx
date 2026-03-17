@@ -38,11 +38,15 @@ export default function PlansSection() {
           </p>
         </div>
 
-        {/* Plans display - Table for desktop, Cards for mobile */}
+        {/* Plans display - Table for desktop (hidden on mobile), Cards for mobile (hidden on desktop) */}
         {filteredPlans.length > 0 ? (
           <>
-            <PlansTable plans={filteredPlans} />
-            <PlansCards plans={filteredPlans} />
+            <div className="hidden md:block">
+              <PlansTable plans={filteredPlans} />
+            </div>
+            <div className="md:hidden">
+              <PlansCards plans={filteredPlans} />
+            </div>
           </>
         ) : (
           <div className="text-center py-16 bg-white rounded-xl">

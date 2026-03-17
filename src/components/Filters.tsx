@@ -55,7 +55,7 @@ export default function Filters({ plans, onFilterChange }: FiltersProps) {
       }
     }
 
-    if (source === "price" || true) {
+    if (source === "price" || (source !== "price" && price[0] > 0 && price[1] < 200000)) {
       filtered = filtered.filter(
         (plan) => plan.price >= price[0] && plan.price <= price[1]
       );
@@ -202,7 +202,18 @@ export default function Filters({ plans, onFilterChange }: FiltersProps) {
                     className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary-100 text-primary-700"
                   >
                     {filter}
-                    <X className="ml-1 h-3 w-3 cursor-pointer" />
+                    <X 
+                      className="ml-1 h-3 w-3 cursor-pointer hover:text-primary-900" 
+                      onClick={() => {
+                        if (selectedCompanies.includes(filter)) {
+                          toggleFilter(filter, selectedCompanies, setSelectedCompanies);
+                        } else if (selectedCoverages.includes(filter)) {
+                          toggleFilter(filter, selectedCoverages, setSelectedCoverages);
+                        } else if (selectedModalities.includes(filter)) {
+                          toggleFilter(filter, selectedModalities, setSelectedModalities);
+                        }
+                      }}
+                    />
                   </span>
                 )
               )}
