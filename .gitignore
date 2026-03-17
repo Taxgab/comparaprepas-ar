@@ -1,0 +1,57 @@
+# Secrets y variables de entorno
+.env
+.env.local
+.env.*.local
+
+# OpenClaw config con secrets
+openclaw.json
+
+# Google Workspace credentials
+.gws-credentials.json
+
+# Google Cloud SDK (muy grande, no trackear)
+google-cloud-sdk/
+*.tar.gz
+
+# JSON (solo credentials, no todos)
+# *.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+.cache/
+skills/radar/output/
+skills/radar/node_modules/
+skills/radar/package-lock.json
+google-cloud-sdk/
+google-cloud-cli-*.tar.gz

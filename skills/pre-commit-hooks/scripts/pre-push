@@ -1,0 +1,65 @@
+#!/bin/bash
+# Pre-push hook para OpenClaw
+# Ejecuta verificaciones antes de cada push
+
+set -e
+
+echo "🚀 Pre-push hooks..."
+
+# 1. Tests completos (si existe npm)
+if command -v npm &> /dev/null && [[ -f "package.json" ]]; then
+    echo "  → Tests completos..."
+    if npm test 2>/dev/null; then
+        echo "    ✅ Tests OK"
+    else
+        echo "    ❌ Tests fallaron"
+        exit 1
+    fi
+fi
+
+# 2. Build (si existe npm)
+if command -v npm &> /dev/null && [[ -f "package.json" ]]; then
+    echo "  → Build..."
+    if npm run build 2>/dev/null; then
+        echo "    ✅ Build OK"
+    else
+        echo "    ⚠️  Build skipped (no build script)"
+    fi
+fi
+
+# 3. Git status limpio
+echo "  → Git status..."
+UNCOMMITTED=$(git status --porcelain 2>/dev/null | grep -v "^??" || true)
+if [[ -n "$UNCOMMITTED" ]]; then
+    echo "    ⚠️  Hay cambios sin commitear:"
+    echo "$UNCOMMITTED" | head -5
+    echo "    (warning: no bloquea el push)"
+else
+    echo "    ✅ Working tree limpio"
+fi
+
+# 4. Branch protection (no push directo a main desde worktrees)
+echo "  → Branch check..."
+CURRENT_BRANCH=$(git branch --show-current)
+if [[ "$CURRENT_BRANCH" == "main" ]]; then
+    # Verificar si venimos de un worktree
+    if [[ "$(pwd)" == *"workspace-"* ]]; then
+        echo "    ⚠️  Push a main desde worktree"
+        echo "    Asegurate de haber mergear antes"
+    fi
+fi
+echo "    ✅ Branch OK"
+
+# 5. CHANGELOG para features
+echo "  → CHANGELOG check..."
+if git diff --cached --name-only | grep -q "src/\|skills/"; then
+    if ! git diff --cached --name-only | grep -q "CHANGELOG.md\|memory/"; then
+        echo "    ⚠️  Considerá actualizar CHANGELOG.md o memory/"
+        echo "    (warning: no bloquea el push)"
+    else
+        echo "    ✅ CHANGELOG/memory actualizado"
+    fi
+fi
+
+echo "✅ Pre-push passed"
+exit 0

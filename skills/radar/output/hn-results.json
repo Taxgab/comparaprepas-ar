@@ -1,0 +1,47 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "How I write software with LLMs",
+    "url": "https://www.stavros.io/posts/how-i-write-software-with-llms/",
+    "score": 240,
+    "by": "indigodaddy",
+    "time": "2026-03-16T01:24:09.000Z",
+    "comments": 185
+  },
+  {
+    "source": "Hacker News",
+    "title": "LLM Architecture Gallery",
+    "url": "https://sebastianraschka.com/llm-architecture-gallery/",
+    "score": 423,
+    "by": "tzury",
+    "time": "2026-03-15T16:01:09.000Z",
+    "comments": 33
+  },
+  {
+    "source": "Hacker News",
+    "title": "LLMs can be exhausting",
+    "url": "https://tomjohnell.com/llms-can-be-absolutely-exhausting/",
+    "score": 237,
+    "by": "tjohnell",
+    "time": "2026-03-15T20:56:21.000Z",
+    "comments": 159
+  },
+  {
+    "source": "Hacker News",
+    "title": "Show HN: Signet – Autonomous wildfire tracking from satellite and weather data",
+    "url": "https://signet.watch",
+    "score": 111,
+    "by": "mapldx",
+    "time": "2026-03-15T12:01:00.000Z",
+    "comments": 30
+  },
+  {
+    "source": "Hacker News",
+    "title": "What is agentic engineering?",
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/",
+    "score": 137,
+    "by": "lumpa",
+    "time": "2026-03-16T01:07:47.000Z",
+    "comments": 82
+  }
+]

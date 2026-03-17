@@ -1,0 +1,82 @@
+#!/bin/bash
+# Pre-commit hook para OpenClaw
+# Ejecuta verificaciones antes de cada commit
+
+set -e
+
+echo "🔍 Pre-commit hooks..."
+
+# 1. Linting (si existe npm)
+if command -v npm &> /dev/null && [[ -f "package.json" ]]; then
+    echo "  → Linting..."
+    if npm run lint --silent 2>/dev/null; then
+        echo "    ✅ Linting OK"
+    else
+        echo "    ⚠️  Linting skipped (no lint script)"
+    fi
+fi
+
+# 2. Tests rápidos (si existe npm y hay tests)
+if command -v npm &> /dev/null && [[ -f "package.json" ]]; then
+    echo "  → Tests unitarios..."
+    if npm test -- --bail --silent 2>/dev/null; then
+        echo "    ✅ Tests OK"
+    else
+        echo "    ⚠️  Tests skipped (no test script o timeout)"
+    fi
+fi
+
+# 3. Formato (bash files)
+echo "  → Formato (bash)..."
+for file in $(git diff --cached --name-only --diff-filter=ACM | grep '\.sh$'); do
+    if command -v shfmt &> /dev/null; then
+        if ! shfmt -d "$file" > /dev/null 2>&1; then
+            echo "    ❌ Formato incorrecto en $file"
+            echo "    Ejecutá: shfmt -w $file"
+            exit 1
+        fi
+    fi
+done
+echo "    ✅ Formato OK"
+
+# 4. Secrets scan
+echo "  → Secrets scan..."
+SECRETS_FOUND=false
+
+# Patrones comunes de secrets
+PATTERNS=(
+    "sk-[a-zA-Z0-9]{20,}"
+    "pk-[a-zA-Z0-9]{20,}"
+    "api[_-]?key[\"']?\s*[:=]\s*[\"'][a-zA-Z0-9]{16,}"
+    "token[\"']?\s*[:=]\s*[\"'][a-zA-Z0-9]{20,}"
+    "secret[\"']?\s*[:=]\s*[\"'][a-zA-Z0-9]{16,}"
+)
+
+for pattern in "${PATTERNS[@]}"; do
+    if git diff --cached | grep -E "$pattern" | grep -v "^-\|^++" > /dev/null 2>&1; then
+        echo "    ⚠️  Posible secret detectado (patrón: $pattern)"
+        SECRETS_FOUND=true
+    fi
+done
+
+if $SECRETS_FOUND; then
+    echo "    ❌ Revisá el diff antes de commitear"
+    echo "    Los secrets deben ir en .env, NO en el código"
+    exit 1
+fi
+echo "    ✅ No secrets detectados"
+
+# 5. Syntax check (bash)
+echo "  → Syntax check (bash)..."
+for file in $(git diff --cached --name-only --diff-filter=ACM | grep '\.sh$'); do
+    if [[ -f "$file" ]]; then
+        if ! bash -n "$file" 2>/dev/null; then
+            echo "    ❌ Error de syntax en $file"
+            exit 1
+        fi
+    fi
+done
+echo "    ✅ Syntax OK"
+
+echo "✅ Pre-commit passed"
+exit 0

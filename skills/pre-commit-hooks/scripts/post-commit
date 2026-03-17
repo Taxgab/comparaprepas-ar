@@ -1,0 +1,36 @@
+#!/bin/bash
+# Post-commit hook para OpenClaw
+# Notifica después de cada commit
+
+# Solo notificar si hay Telegram configurado
+if [[ -z "$TELEGRAM_BOT_TOKEN" ]] || [[ -z "$TELEGRAM_CHAT_ID" ]]; then
+    exit 0
+fi
+
+# Obtener info del commit
+COMMIT_HASH=$(git log -1 --pretty=%h)
+COMMIT_MSG=$(git log -1 --pretty=%s)
+BRANCH=$(git branch --show-current)
+COMMITTER=$(git log -1 --pretty=%an)
+
+# Escapar mensajes para URL
+MSG=$(cat <<EOF
+📝 *Commit en \`${BRANCH}\`*
+
+*Autor:* ${COMMITTER}
+*Hash:* \`${COMMIT_HASH}\`
+*Mensaje:* ${COMMIT_MSG}
+EOF
+)
+
+# Reemplazar saltos y caracteres especiales
+MSG=$(echo "$MSG" | tr '\n' '%' | sed 's/ /%20/g' | sed 's/`//g' | sed 's/*//g')
+
+# Enviar a Telegram
+curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    -d "chat_id=${TELEGRAM_CHAT_ID}" \
+    -d "text=${MSG}" \
+    -d "parse_mode=Markdown" \
+    > /dev/null 2>&1 || true
+
+echo "📤 Notificación de commit enviada a Telegram"

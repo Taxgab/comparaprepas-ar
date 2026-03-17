@@ -1,0 +1,102 @@
+[
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "Qwen3.5-9B-Claude-4.6-Opus-Uncensored-Distilled-GGUF",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1runlpf/qwen359bclaude46opusuncensoreddistilledgguf/",
+    "score": 1026,
+    "comments": 157,
+    "author": "EvilEnginer",
+    "time": "2026-03-15T19:43:03.000Z",
+    "daysOld": 1
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "Homelab has paid for itself! (at least this is how I justify it...)",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1rug5go/homelab_has_paid_for_itself_at_least_this_is_how/",
+    "score": 646,
+    "comments": 95,
+    "author": "Reddactor",
+    "time": "2026-03-15T14:57:18.000Z",
+    "daysOld": 1
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "Nvidia updated the Nemotron Super 3 122B A12B license to remove the rug-pull clauses",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1rue6tn/nvidia_updated_the_nemotron_super_3_122b_a12b/",
+    "score": 279,
+    "comments": 72,
+    "author": "__JockY__",
+    "time": "2026-03-15T13:34:39.000Z",
+    "daysOld": 1
+  },
+  {
+    "source": "Reddit r/MachineLearning",
+    "title": "[D] What is even the point of these LLM benchmarking papers?",
+    "url": "https://reddit.com/r/MachineLearning/comments/1rsdify/d_what_is_even_the_point_of_these_llm/",
+    "score": 221,
+    "comments": 67,
+    "author": "casualcreak",
+    "time": "2026-03-13T04:21:26.000Z",
+    "daysOld": 3
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "Qwen3.5-27B performs almost on par with 397B and GPT-5 mini in the Game Agent Coding League",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1rue2f4/qwen3527b_performs_almost_on_par_with_397b_and/",
+    "score": 150,
+    "comments": 36,
+    "author": "kyazoglu",
+    "time": "2026-03-15T13:29:03.000Z",
+    "daysOld": 1
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "Can we say that each year an open-source alternative replaces the previous year's closed-source SOTA?",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1ruvn51/can_we_say_that_each_year_an_opensource/",
+    "score": 96,
+    "comments": 36,
+    "author": "Chair-Short",
+    "time": "2026-03-16T01:08:41.000Z",
+    "daysOld": 0
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "OmniCoder-9B best vibe coding model for 8 GB Card",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1rv24kk/omnicoder9b_best_vibe_coding_model_for_8_gb_card/",
+    "score": 53,
+    "comments": 17,
+    "author": "Powerful_Evening5495",
+    "time": "2026-03-16T06:41:24.000Z",
+    "daysOld": 0
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "The guy that won the DGX Spark GB10 at NVIDIA and Cartesia Hackathon Won an NVIDIA 5080 at Pytorch's Hackathon doing GPU Kernel Optimization!",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1ruz3h5/the_guy_that_won_the_dgx_spark_gb10_at_nvidia_and/",
+    "score": 49,
+    "comments": 11,
+    "author": "brandon-i",
+    "time": "2026-03-16T03:51:07.000Z",
+    "daysOld": 0
+  },
+  {
+    "source": "Reddit r/MachineLearning",
+    "title": "[P] preflight, a pre-training validator for PyTorch I built after losing 3 days to label leakage",
+    "url": "https://reddit.com/r/MachineLearning/comments/1ruepfx/p_preflight_a_pretraining_validator_for_pytorch_i/",
+    "score": 44,
+    "comments": 9,
+    "author": "Red_Egnival",
+    "time": "2026-03-15T13:57:27.000Z",
+    "daysOld": 1
+  },
+  {
+    "source": "Reddit r/LocalLLaMA",
+    "title": "We made a coding benchmark that's actually hard to fake. Best result across GPT-5.2, O4-mini, Gemini, Qwen, Kimi with every prompting trick we could think of: 11%.",
+    "url": "https://reddit.com/r/LocalLLaMA/comments/1ruskjk/we_made_a_coding_benchmark_thats_actually_hard_to/",
+    "score": 34,
+    "comments": 15,
+    "author": "ShoddyIndependent883",
+    "time": "2026-03-15T22:56:29.000Z",
+    "daysOld": 1
+  }
+]
