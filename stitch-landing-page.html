@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ComparaPrepas - Compará Seguros de Salud en Argentina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#a9c7ff",
+              "surface-container": "#ecedf6",
+              "on-surface": "#181c22",
+              "on-tertiary-container": "#ffe3d6",
+              "surface-dim": "#d8dae2",
+              "surface": "#f9f9ff",
+              "on-tertiary-fixed-variant": "#793000",
+              "on-secondary-container": "#0f4787",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e0e2eb",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#aac7ff",
+              "on-primary-fixed": "#001b3e",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#001b3d",
+              "on-primary-container": "#dfe8ff",
+              "background": "#f9f9ff",
+              "tertiary-fixed-dim": "#ffb692",
+              "primary": "#004e9f",
+              "on-primary-fixed-variant": "#00458e",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#af4900",
+              "primary-container": "#0066cc",
+              "primary-fixed": "#d7e3ff",
+              "surface-container-low": "#f2f3fc",
+              "tertiary": "#883700",
+              "secondary-container": "#8cb7ff",
+              "on-tertiary-fixed": "#341100",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2d3037",
+              "outline-variant": "#c1c6d5",
+              "outline": "#727784",
+              "tertiary-fixed": "#ffdbcb",
+              "inverse-on-surface": "#eff0f9",
+              "surface-variant": "#e0e2eb",
+              "secondary": "#305ea0",
+              "on-surface-variant": "#414753",
+              "on-secondary-fixed-variant": "#0e4686",
+              "surface-bright": "#f9f9ff",
+              "surface-tint": "#005cba",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e6e8f0",
+              "on-background": "#181c22",
+              "inverse-primary": "#aac7ff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#d6e3ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9f9ff;
+        color: #181c22;
+      }
+      .font-manrope { font-family: 'Manrope', sans-serif; }
+      .bg-primary-gradient {
+        background: linear-gradient(135deg, #004e9f 0%, #0066cc 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#f9f9ff] dark:bg-slate-950 no-border tonal-shift bg-[#f2f3fc] dark:bg-slate-900 flat no-shadows">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0066CC] dark:text-blue-400" data-icon="medical_services">medical_services</span>
+<span class="text-2xl font-black tracking-tight text-[#004e9f] dark:text-blue-500 font-manrope">ComparaPrepas</span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#004e9f] dark:text-blue-400 font-bold border-b-2 border-[#004e9f] pb-1 font-manrope transition-all duration-200" href="#">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-manrope hover:text-[#0066CC] dark:hover:text-blue-300 transition-colors duration-200" href="#">Empresas</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium font-manrope hover:text-[#0066CC] dark:hover:text-blue-300 transition-colors duration-200" href="#">Contacto</a>
+<button class="bg-primary-gradient text-white px-6 py-2 rounded-md font-bold hover:opacity-90 active:scale-95 transition-all">
+                    Contacto
+                </button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32 px-6">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="text-5xl md:text-7xl font-extrabold font-manrope leading-tight text-on-surface tracking-tight mb-6">
+                        Compará seguros de salud privados
+                    </h1>
+<p class="text-xl text-on-surface-variant font-body mb-10 max-w-xl">
+                        Encontrá la mejor cobertura médica en Argentina. Comparamos las prepas líderes para que elijas con seguridad y ahorro.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<button class="bg-primary-gradient text-white px-8 py-4 rounded-md text-lg font-bold shadow-lg hover:primary_fixed transition-all active:scale-95">
+                            Ver Planes Ahora
+                        </button>
+<button class="bg-transparent border border-outline-variant border-opacity-20 text-on-surface px-8 py-4 rounded-md text-lg font-bold hover:bg-surface-container-low transition-all">
+                            Saber Más
+                        </button>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant border-opacity-15 pt-8">
+<div>
+<p class="text-3xl font-black text-primary font-manrope">15+</p>
+<p class="text-sm text-on-surface-variant font-label">Empresas</p>
+</div>
+<div>
+<p class="text-3xl font-black text-primary font-manrope">50+</p>
+<p class="text-sm text-on-surface-variant font-label">Planes</p>
+</div>
+<div>
+<p class="text-3xl font-black text-primary font-manrope">100%</p>
+<p class="text-sm text-on-surface-variant font-label">Cobertura</p>
+</div>
+</div>
+</div>
+<!-- Hero Image / Visual Asset -->
+<div class="relative hidden md:block">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary opacity-5 rounded-full blur-3xl"></div>
+<div class="relative z-10 rounded-full overflow-hidden aspect-square shadow-2xl border-8 border-surface-container-lowest">
+<img alt="Profesional de salud" class="w-full h-full object-cover" data-alt="smiling argentinian doctor in white coat holding a digital tablet in a modern high-tech medical clinic with soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGTAVL3VRvwzG7WmF9rnwpgfLMX51QgLxM-5IkSiI0oSLMsaOR6Ewz7MKahEwtpvaFu3pl8qy-l5Wc0rMbHE3hBZL-dI0eOz4OL2xxfEkUqU9kd8dxJXvpFywqkIKSQG1Kddtbx8AAydFJbznocuC0JF2oIoClyT7A4wmyRfZ3-NJHXUkypKpLmKEQNDS4DbCKGH-22agh1N4gx44Ttymy9LFq9yRb_CFiLthLUWNxb1x8JajdYrnBTIUfL8nXTwx1sddDrHBZzA"/>
+</div>
+<!-- Floating Benefit Chip -->
+<div class="absolute bottom-10 -left-10 bg-tertiary-fixed text-on-tertiary-fixed px-6 py-3 rounded-full shadow-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Odontología Premium Incluida
+                    </div>
+</div>
+</div>
+</section>
+<!-- Companies Grid Section -->
+<section class="bg-surface-container-low py-24 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold font-manrope mb-4">Las Mejores Prepagas</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Elegí entre las instituciones de salud más prestigiosas del país con beneficios exclusivos por contratar online.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Company Card 1: Swiss Medical -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center group">
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Swiss Medical Logo" class="h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="minimalist health insurance logo on white background with blue and red abstract shapes representing healthcare authority" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCVAO_RowDqQRHCbGdWTGALgd5muzWnutLOCTbV1JGfpKBanO9Ns6kCjrc2avpC-cDL-GzrFlePr67ZMKGgXcqa95ZFNLD4Bm9syPSC6cKLUbNBb3OKeupV9IHxVar4N1SOlLj20ioJTHo91RaDA5xxGBVI6gyaj8nzWude4HevSZUjf-16yrWiumPM-P70ZoMdZM-n7loS6KOnRXWzcamOP3pX7OPjUxOnoK0NNJe6udVt6JlphLcWx-tU_EX6ynl28kUWwXguM"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Swiss Medical</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Líder en innovación y cartilla médica premium a nivel nacional.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$45.500<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full border border-outline-variant border-opacity-20 text-on-surface font-bold py-3 rounded-md hover:bg-primary hover:text-white transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+<!-- Company Card 2: Galeno -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center group">
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Galeno Logo" class="h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="modern medical corporate identity logo with clean blue typography and medical cross symbol on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnof_8rSdY_6UsrA6sFy2mQi9Xv6KIfExAHeMtbZBQEL9lH1MJudFSpyQGwKSTwuUOo6PqtBs45Wlf3cTQhDH1lwrfIlHKPtQ8m7frhYV-V-r2g1_iCgUtdR77lAZO13jXc7pYkaHcnYAeYIrmDKML6rN0LS4uV-nZE85Rw7mehafRybyCp5axXoImjupwZGFQGsLwwNUTcePuNzS4Y7TrAd8BE3hWnJ6FkDmn6dKNCHNpcLFSuruB9NYl25LvUCzkWEMRj8ZdpYE"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Galeno</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Sanatorios propios de alta complejidad y excelente servicio.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$42.800<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full border border-outline-variant border-opacity-20 text-on-surface font-bold py-3 rounded-md hover:bg-primary hover:text-white transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+<!-- Company Card 3: Omint -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center group">
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Omint Logo" class="h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="professional insurance company brand mark with elegant navy blue styling on clear white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMsiUlorz-ll3JFyCI5IF4p-vAwuoxmGnaWcbztiUQRa8YuS_ikxi9DbRjKNxs_0KXXmI7XgLh38n4XWnYVTne3Oc0U5ucfoH5_58dn5vZiDzHyGDywnuApQSdMnmm1OwZ-K7d5BZzS3oCQS_eyaW4jnBhPATGrF-RLYCyT2sn__C9L4aQjr4O1DYCyYqyxjzOusCMjj3DRqHcUwHY44JpxN5e76sUMq0dDyb-TSFhxDqCXc8P934jljXO3aJ4Be5yWuJcfCs4_8U"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Omint</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Asistencia médica internacional y planes corporativos a medida.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$39.900<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full border border-outline-variant border-opacity-20 text-on-surface font-bold py-3 rounded-md hover:bg-primary hover:text-white transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+<!-- Company Card 4: Sancor Salud -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border-2 border-primary-fixed hover:shadow-lg transition-all flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg tracking-widest uppercase">Recomendado</div>
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Sancor Salud Logo" class="h-12 object-contain" data-alt="corporate health brand logo with vibrant colors and professional medical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCui876Qzuhp5ORQEFrxDNG-RhH2sdUd6sfmpzNpXig1wnL4znHpbfsWXpJSUq0cIIDI8yCloAk6tLWR-52nD3esbsMB1h20cbNsTVx7pgEJEz67QEuVnXQEw9xr7WjXeRuAChwNzqz2Q2p8dOWJVhK_Qnh-rXs8NsDOmLjqnZHiXWQ2I4TaKfQWk0zLPnoIl6vG3MN2p_7AP51pwxMADLPMzay6lKtLeimjIosbo4TLFf_xxXSjYQ9Gl8cUu1wuL9f8Bz7jii3aI4"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Sancor Salud</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">La red de cobertura más amplia en todo el territorio argentino.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$37.200<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full bg-primary-gradient text-white font-bold py-3 rounded-md hover:opacity-90 transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+<!-- Company Card 5: Accord Salud -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center group">
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Accord Salud Logo" class="h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="abstract healthcare company emblem with sophisticated teal and blue accents on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg22cUssz-gVIqS05YbVJhI-k4GifhpePX4Ka2Itu2O9LjWTwz9z1XZ7H5GZQIBkjph8Vkd_cXmf7V4cP1q2lgJZHLr6M2OkrpPseRFTokSVDEra_PxVN717PX0DeNkXBKLJ4F2U_8xytEREGWxtYGjDzxoTYGj1f9KaM0E1Eb_sToaUMHOEVv5LqfpZvE_aoAd7RliQWUlxMCqTxj5N0gNopZMrWCDfURGG2vVNFS7ZoWlIjvvfK4vqySDn8nF6TnREMJT2JxJ0o"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Accord Salud</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Excelente relación costo-beneficio respaldada por Unión Personal.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$32.500<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full border border-outline-variant border-opacity-20 text-on-surface font-bold py-3 rounded-md hover:bg-primary hover:text-white transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+<!-- Company Card 6: Boreal -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center group">
+<div class="h-20 w-full flex items-center justify-center mb-6">
+<img alt="Boreal Logo" class="h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="modern medical group logo with soft curves and calming blue tones representing trust and care" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDztLvL5UHxyS_v3MCeMLnwL6PcySciHD0KUJ7bdVh1LeyagPfCxAFpSe8vhd2EjCDjsYOJzyX745JRSCGgfHh3axPdcXzf8GAvGIKhb9blOSM_FaYrR2RJLWBsbbACdJZ0IZURlRp8VN0QKTkP8bXAzVNHVcBA1wvLLoNdtCSc8C-YP9rWMcOld0w44jp4IPoiAdx4PFVOrdiQ5jDEEkErZoN3OoI4p9ORuqOR1tLVDoy--ZblavHXiDfLPMNfYKt_b4Gg5VvBS98"/>
+</div>
+<h3 class="text-xl font-bold font-manrope mb-2">Boreal</h3>
+<p class="text-on-surface-variant text-sm mb-6 font-body">Cobertura regional focalizada con atención personalizada y ágil.</p>
+<div class="mt-auto w-full">
+<p class="text-sm text-on-surface-variant mb-1">Desde</p>
+<p class="text-2xl font-black text-primary mb-6 font-manrope">$29.800<span class="text-sm font-medium">/mo</span></p>
+<button class="w-full border border-outline-variant border-opacity-20 text-on-surface font-bold py-3 rounded-md hover:bg-primary hover:text-white transition-all">
+                                Ver planes
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="bg-primary-gradient rounded-3xl p-12 md:p-20 relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-12">
+<!-- Background texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="h-full w-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 C 20 0 50 0 100 100" fill="white"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-xl">
+<h2 class="text-4xl md:text-5xl font-black font-manrope text-white mb-6">¿Dudas sobre cuál elegir?</h2>
+<p class="text-white text-opacity-80 text-lg font-body mb-8">
+                            Nuestros asesores expertos te ayudan a comparar cartillas, coberturas y precios sin compromiso. Totalmente gratis.
+                        </p>
+<div class="flex items-center gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-md font-black shadow-lg hover:scale-105 transition-all">
+                                Hablar con un experto
+                            </button>
+</div>
+</div>
+<div class="relative z-10 flex -space-x-4">
+<img alt="Asesor 1" class="h-16 w-16 rounded-full border-4 border-primary object-cover" data-alt="portrait of a professional female advisor smiling in a clean corporate environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAumqpqM-Ggip6IB_68WiGY8gEeOxp7YO_jggqQuGoQmznvXnkw3ii1weA1z3UXFD_l5cjBP-1JAgExPsluH9SkAelHzM2gluby9x0AcPQ0gMzpYwEFkqLFNH2qjWfVM7Yqgem3wvJlBFDatA7nLfOBzVuYRV_zALcUMBPKMo7nUpRBQI0Avzw_zEhTB1yze_PPoPc-HiBaRZtw_RCsqZB8QdUHFMl4Fa89bZvnPc-_v672PEyYD-GBYUTB-EKx_ZujytAf8sPulUo"/>
+<img alt="Asesor 2" class="h-16 w-16 rounded-full border-4 border-primary object-cover" data-alt="headshot of a friendly male customer service representative with a clean modern look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeasOrZJsFA36WJVvTt0lI7dFQcVO6yBlNMrg6SACN2YnR3yrSSNJM5gaTUzZL9Aub95P8ROhG2jlHQNhORq1GJ-dUW4-SBaF0uxF2F7Awn26UwkqKmodT4gLZoCkeITVtAESRlgmKinZewDLUBmPRAnB-PV2k5et04Rx_9zS6kdU5xO-_rveZpzzn0ywQ5fmGE-o-mUM29kJKsgQBJu6BSlLKQxftGJAJrfTOiDKu8JLfXvmqzmNd6iBT0vElKckjfAM-JMk1Q7U"/>
+<img alt="Asesor 3" class="h-16 w-16 rounded-full border-4 border-primary object-cover" data-alt="smiling mature professional woman representing trust and experience in consulting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5OO6Bu_Z0EA_BlxpmpqmT-ukkDFe7krfYsDFZkVIzxCx8C1sNsisDaPBZqIhHvJNOkC8MkTDbUKxXlT88pvsK-n7YNxnn2s5cv5SzSkTglZAJiPaNcjU_2h7H737trvhSYu9L9YI8YA6BuZI3kqYhiM-v6yZ2VxDyN_2FSZXFI19zM5tLgaA-qE3P83FqU9Z9veak4cWrjxMbig9kfb-v83ig1ul56o8h9_Xtk4qaSPipc8uSzC6Vz8ecqfnKgTYpWBY0JcSr5Vg"/>
+<div class="h-16 w-16 rounded-full border-4 border-primary bg-primary-container text-white flex items-center justify-center font-bold text-sm">+12</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f2f3fc] dark:bg-slate-900 no-line tonal-shift flat">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0066CC]" data-icon="medical_services">medical_services</span>
+<span class="text-lg font-bold text-[#004e9f] font-manrope">ComparaPrepas</span>
+</div>
+<p class="text-sm font-inter text-slate-500 dark:text-slate-400 text-center md:text-left">
+                    © 2024 ComparaPrepas AR. Todos los derechos reservados.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm font-inter text-slate-500 hover:text-[#004e9f] transition-colors duration-200 opacity-90" href="#">Privacidad</a>
+<a class="text-sm font-inter text-slate-500 hover:text-[#004e9f] transition-colors duration-200 opacity-90" href="#">Términos</a>
+<a class="text-sm font-inter text-slate-500 hover:text-[#004e9f] transition-colors duration-200 opacity-90" href="#">Preguntas Frecuentes</a>
+<a class="text-sm font-inter text-slate-500 hover:text-[#004e9f] transition-colors duration-200 opacity-90" href="#">Contacto</a>
+</div>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
