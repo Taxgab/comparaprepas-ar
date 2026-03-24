@@ -8,18 +8,17 @@ Comparador de prepagas de Argentina construido con Next.js 14.
 - **TypeScript** para type safety
 - **Tailwind CSS** para estilos
 - **Lucide React** para íconos
-- **Mobile-first** design (cards en móvil, tabla en desktop)
-- **Filtros en tiempo real** con useState
-- **12 planes** de 6 empresas argentinas
+- **Mobile-first** design
+- **6 empresas** con detalle de planes, contacto y servicios
 
 ## 📋 Empresas Incluidas
 
-- PreMedic (2 planes)
-- Avalian (2 planes)
-- Medifé (2 planes)
-- OSDE (2 planes)
-- Hominis (2 planes)
-- Swiss Medical (2 planes)
+- PreMedic
+- Avalian
+- Medifé
+- OSDE
+- Hominis
+- Swiss Medical
 
 ## 🛠️ Instalación
 
@@ -48,18 +47,17 @@ comparaprepas-ar/
 │   ├── app/
 │   │   ├── globals.css
 │   │   ├── layout.tsx
-│   │   └── page.tsx
+│   │   ├── page.tsx              # Home: grid de empresas
+│   │   └── company/[id]/page.tsx # Detail: empresa + planes
 │   ├── components/
+│   │   ├── CompanyCard.tsx       # Card para lista de empresas
 │   │   ├── Header.tsx
 │   │   ├── Hero.tsx
-│   │   ├── Filters.tsx
-│   │   ├── PlansTable.tsx
-│   │   ├── PlansCards.tsx
-│   │   ├── PlansSection.tsx
 │   │   ├── HowItWorks.tsx
 │   │   └── LegalSection.tsx
 │   └── data/
-│       └── plans.ts
+│       ├── companies.ts          # Data de empresas
+│       └── plans.ts             # Data de planes
 ├── public/
 ├── package.json
 ├── tailwind.config.ts
@@ -67,52 +65,22 @@ comparaprepas-ar/
 └── README.md
 ```
 
-## 🎨 Componentes
-
-### Header
-Navegación sticky con menú responsive para móvil.
-
-### Hero
-Sección principal con búsqueda y propuesta de valor.
-
-### Filters
-Filtros sticky en tiempo real:
-- Empresas (checkbox múltiple)
-- Cobertura (Básica, Intermedia, Completa, Premium)
-- Modalidad (Ambulatorio, Con internación, HMO, Prepaga)
-- Precio (slider de rango)
-
-### PlansSection
-Contenedor principal que alterna entre:
-- **Tabla** (desktop): Vista comparativa completa
-- **Cards** (móvil): Vista individual por plan
-
-### HowItWorks
-4 pasos del proceso con íconos.
-
-### LegalSection
-Acordeón con:
-- Términos y Condiciones
-- Política de Privacidad
-- Descargo de Responsabilidad
-- Contacto
-
 ## 📱 Responsive Design
 
-- **Móvil (< 768px)**: Cards individuales, menú hamburguesa
-- **Tablet (768px - 1024px)**: 2 columnas de cards
-- **Desktop (> 1024px)**: Tabla completa, 3 columnas de cards
+- **Móvil (< 768px)**: Cards en grid de 1 columna
+- **Tablet (768px - 1024px)**: Grid de 2 columnas
+- **Desktop (> 1024px)**: Grid de 3 columnas
 
 ## 🔧 Personalización
 
+### Agregar más empresas
+Editar `src/data/companies.ts` y agregar nuevos objetos al array.
+
 ### Agregar más planes
-Editar `src/data/plans.ts` y agregar nuevos objetos al array `plans`.
+Editar `src/data/plans.ts` y agregar nuevos objetos al array.
 
 ### Cambiar colores
 Modificar `tailwind.config.ts` en la sección `theme.extend.colors`.
-
-### Modificar empresas
-Actualizar el array `companies` en `src/data/plans.ts`.
 
 ## 📄 Licencia
 
