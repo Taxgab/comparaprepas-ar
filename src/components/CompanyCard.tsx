@@ -19,14 +19,15 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       href={`/company/${company.id}`}
       aria-label={`Ver planes de ${company.name}`}
       role="article"
+      className="h-full block"
     >
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 cursor-pointer group">
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 cursor-pointer group h-full flex flex-col">
         <div className="flex items-start gap-4">
-          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md">
+          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md flex-shrink-0">
             {company.logo}
           </div>
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
               {company.name}
             </h3>
             <div className="flex items-center gap-1 mt-1">
@@ -53,11 +54,11 @@ export default function CompanyCard({ company }: CompanyCardProps) {
           </div>
         </div>
 
-        <p className="text-gray-600 text-sm mt-4 line-clamp-2">
+        <p className="text-gray-600 text-sm mt-4 line-clamp-2 flex-grow">
           {company.description}
         </p>
 
-        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between flex-shrink-0">
           <div>
             <span className="text-xs text-gray-500">Desde </span>
             <span className="text-lg font-bold text-blue-600">
