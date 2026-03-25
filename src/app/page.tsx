@@ -18,7 +18,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Las Mejores Prepagas
+                Las Mejores Medicinas Prepagas
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
                 Elegí entre las instituciones de salud más prestigiosas del país con beneficios exclusivos por contratar online.

@@ -7,7 +7,7 @@ export default function HowItWorks() {
     {
       icon: Search,
       title: "Buscá",
-      description: "Explorá todos los planes disponibles de las principales prepagas del país.",
+      description: "Explorá todos los planes disponibles de las principales medicinas prepagas del país.",
       color: "bg-blue-100 text-blue-600",
     },
     {

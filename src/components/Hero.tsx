@@ -15,19 +15,19 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Compará Prepagas en{" "}
+            Compará Medicina Prepaga en{" "}
             <span className="text-primary-600">Argentina</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Encontrá el plan de salud perfecto para vos y tu familia. 
-            Compará precios, coberturas y beneficios de las principales prepagas del país.
+            Compará precios, coberturas y beneficios de las principales medicinas prepagas del país.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <div className="relative w-full max-w-md">
               <input
                 type="text"
-                placeholder="¿Qué estás buscando?"
+                placeholder="Prepaga"
                 className="w-full px-6 py-4 pl-12 rounded-full border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
               />
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />

@@ -6,10 +6,10 @@ import SkipLink from "@/components/SkipLink";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ComparaPrepas AR - Compará Prepagas en Argentina",
+  title: "ComparaPrepas AR - Compará Medicina Prepaga en Argentina",
   description:
-    "Encontrá el plan de salud perfecto para vos y tu familia. Compará precios, coberturas y beneficios de las principales prepagas del país.",
-  keywords: ["prepagas", "salud", "Argentina", "comparador", "planes", "medicina"],
+    "Encontrá el plan de salud perfecto para vos y tu familia. Compará precios, coberturas y beneficios de las principales medicinas prepagas del país.",
+  keywords: ["medicina prepaga", "salud", "Argentina", "comparador", "planes", "medicina"],
 };
 
 export default function RootLayout({
