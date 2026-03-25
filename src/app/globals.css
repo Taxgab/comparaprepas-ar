@@ -38,9 +38,9 @@ body {
   background: #a1a1a1;
 }
 
-/* Smooth transitions */
+/* Smooth transitions - limited to specific properties for performance and accessibility */
 * {
-  transition-property: color, background-color, border-color, box-shadow;
+  transition-property: color, background-color, border-color;
   transition-timing-function: ease-in-out;
   transition-duration: 150ms;
 }

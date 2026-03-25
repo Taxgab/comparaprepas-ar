@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Metadata } from "next";
 import { getCompanyById, companies } from "@/data/companies";
 import { getPlansByCompany, plans } from "@/data/plans";
 
@@ -11,6 +12,30 @@ export async function generateStaticParams() {
   return companies.map((company) => ({
     id: company.id,
   }));
+}
+
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+  const { id } = await params;
+  const company = getCompanyById(id);
+
+  if (!company) {
+    return {
+      title: "Empresa no encontrada | ComparaPrepas AR",
+      description: "La empresa que buscás no existe en nuestro comparador.",
+    };
+  }
+
+  return {
+    title: `${company.name} - Planes y Precios | ComparaPrepas AR`,
+    description: company.description,
+    openGraph: {
+      title: `${company.name} - Planes y Precios`,
+      description: company.description,
+      type: "website",
+    },
+  };
 }
 
 export default async function CompanyPage({ params }: PageProps) {

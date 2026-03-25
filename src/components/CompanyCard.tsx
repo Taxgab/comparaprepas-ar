@@ -15,7 +15,11 @@ export default function CompanyCard({ company }: CompanyCardProps) {
   };
 
   return (
-    <Link href={`/company/${company.id}`}>
+    <Link
+      href={`/company/${company.id}`}
+      aria-label={`Ver planes de ${company.name}`}
+      role="article"
+    >
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 cursor-pointer group">
         <div className="flex items-start gap-4">
           <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md">
