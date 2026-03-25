@@ -13,32 +13,41 @@ export default function Header() {
     { name: "Legal", href: "#legal" },
   ];
 
+  const scrollToSection = (href: string) => {
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <button
+            onClick={() => scrollToSection("#inicio")}
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          >
             <Shield className="h-8 w-8 text-primary-600" />
             <span className="text-xl font-bold text-gray-900">
               ComparaPrepas AR
             </span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => scrollToSection(link.href)}
                 className="text-gray-600 hover:text-primary-600 transition-colors font-medium"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
-            <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
-              Contactar
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -61,18 +70,14 @@ export default function Header() {
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="text-gray-600 hover:text-primary-600 transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-gray-600 hover:text-primary-600 transition-colors font-medium text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
-              <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium w-full">
-                Contactar
-              </button>
             </div>
           </div>
         )}

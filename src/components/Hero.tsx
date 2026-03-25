@@ -3,6 +3,13 @@
 import { Search, CheckCircle } from "lucide-react";
 
 export default function Hero() {
+  const scrollToPlans = () => {
+    const element = document.getElementById("planes");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="inicio" className="bg-gradient-to-br from-primary-50 to-blue-100 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +32,10 @@ export default function Hero() {
               />
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             </div>
-            <button className="w-full sm:w-auto bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg">
+            <button
+              onClick={scrollToPlans}
+              className="w-full sm:w-auto bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg"
+            >
               Buscar Planes
             </button>
           </div>
