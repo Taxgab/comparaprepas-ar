@@ -18,10 +18,12 @@ const mockCompany: Company = {
   features: {
     hospitalization: true,
     emergency: true,
-    medications: true,
     dental: false,
     vision: false,
-    gym: false,
+    maternity: true,
+    mentalHealth: false,
+    pharmacy: true,
+    medicalCheckups: false,
   },
 };
 

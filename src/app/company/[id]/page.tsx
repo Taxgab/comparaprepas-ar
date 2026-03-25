@@ -59,10 +59,12 @@ export default async function CompanyPage({ params }: PageProps) {
   const featureLabels: Record<string, string> = {
     hospitalization: "Internación",
     emergency: "Emergencia",
-    medications: "Medicamentos",
     dental: "Odontología",
-    vision: "Optica",
-    gym: "Gimnasio",
+    vision: "Óptica",
+    maternity: "Maternidad",
+    mentalHealth: "Salud Mental",
+    pharmacy: "Farmacia",
+    medicalCheckups: "Chequeos Médicos",
   };
 
   return (

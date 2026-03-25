@@ -8,10 +8,12 @@ export interface Plan {
   features: {
     hospitalization: boolean;
     emergency: boolean;
-    medications: boolean;
     dental: boolean;
     vision: boolean;
-    gym: boolean;
+    maternity: boolean;
+    mentalHealth: boolean;
+    pharmacy: boolean;
+    medicalCheckups: boolean;
   };
   waitingPeriod: number;
   ageLimit: number;
@@ -29,10 +31,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: false,
       emergency: true,
-      medications: true,
       dental: false,
       vision: false,
-      gym: false,
+      maternity: false,
+      mentalHealth: false,
+      pharmacy: true,
+      medicalCheckups: false,
     },
     waitingPeriod: 2,
     ageLimit: 75,
@@ -47,10 +51,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: true,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 3,
     ageLimit: 75,
@@ -66,10 +72,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: false,
       vision: false,
-      gym: false,
+      maternity: false,
+      mentalHealth: false,
+      pharmacy: true,
+      medicalCheckups: false,
     },
     waitingPeriod: 2,
     ageLimit: 70,
@@ -84,10 +92,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: true,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 4,
     ageLimit: 80,
@@ -103,10 +113,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: false,
       emergency: true,
-      medications: true,
       dental: true,
       vision: false,
-      gym: false,
+      maternity: false,
+      mentalHealth: false,
+      pharmacy: true,
+      medicalCheckups: false,
     },
     waitingPeriod: 2,
     ageLimit: 75,
@@ -121,10 +133,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: true,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 3,
     ageLimit: 75,
@@ -140,10 +154,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: false,
       vision: false,
-      gym: true,
+      maternity: false,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 3,
     ageLimit: 75,
@@ -158,10 +174,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: true,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 6,
     ageLimit: 80,
@@ -177,10 +195,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: false,
       emergency: true,
-      medications: true,
       dental: false,
       vision: false,
-      gym: false,
+      maternity: false,
+      mentalHealth: false,
+      pharmacy: true,
+      medicalCheckups: false,
     },
     waitingPeriod: 1,
     ageLimit: 70,
@@ -195,10 +215,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: false,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: false,
     },
     waitingPeriod: 2,
     ageLimit: 75,
@@ -214,10 +236,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: false,
       vision: false,
-      gym: true,
+      maternity: false,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 3,
     ageLimit: 75,
@@ -232,10 +256,12 @@ export const plans: Plan[] = [
     features: {
       hospitalization: true,
       emergency: true,
-      medications: true,
       dental: true,
       vision: true,
-      gym: true,
+      maternity: true,
+      mentalHealth: true,
+      pharmacy: true,
+      medicalCheckups: true,
     },
     waitingPeriod: 6,
     ageLimit: 85,

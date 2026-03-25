@@ -371,5 +371,5 @@ export const companies: Company[] = [
 ];
 
 export const getCompanyById = (id: string): Company | undefined => {
-  return companies.find((c) => c.id === id);
+  return companies.find((c) => c.id === c.id);
 };
