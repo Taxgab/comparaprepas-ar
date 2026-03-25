@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export default function Hero() {
   const scrollToPlans = () => {
@@ -23,31 +23,23 @@ export default function Hero() {
             Compará precios, coberturas y beneficios de las principales medicinas prepagas del país.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <div className="relative w-full max-w-md">
-              <input
-                type="text"
-                placeholder="Prepaga"
-                className="w-full px-6 py-4 pl-12 rounded-full border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-lg"
-              />
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            </div>
+          <div className="flex justify-center mb-12">
             <button
               onClick={scrollToPlans}
-              className="w-full sm:w-auto bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg"
+              className="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg"
             >
-              Buscar Planes
+              Ver Planes
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-2 text-gray-700">
               <CheckCircle className="h-6 w-6 text-green-500" />
-              <span className="font-medium">+12 Planes disponibles</span>
+              <span className="font-medium">+40 Planes disponibles</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-gray-700">
               <CheckCircle className="h-6 w-6 text-green-500" />
-              <span className="font-medium">6 Empresas líderes</span>
+              <span className="font-medium">15 Prepagas líderes</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-gray-700">
               <CheckCircle className="h-6 w-6 text-green-500" />
